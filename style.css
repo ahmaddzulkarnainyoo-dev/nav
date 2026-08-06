@@ -286,6 +286,7 @@ body {
    Section Transparan di atas Video Persisten
    ============================================ */
 .about,
+.showcase,
 .location,
 .contact {
   position: relative;
@@ -380,7 +381,177 @@ body {
 }
 
 /* ============================================
-   Section 3: Lokasi Workshop (2-Column Layout)
+   Section 3: Product Showcase Slider
+   ============================================ */
+.showcase {
+  padding: 6rem 1.5rem 7rem;
+}
+
+.showcase-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.showcase-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* ---------- Kolom Kiri: Swiper ---------- */
+.showcase-slider-col {
+  min-width: 0;
+}
+
+.showcase-swiper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 3.5rem;
+}
+
+.showcase-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase-img {
+  display: block;
+  max-width: 88%;
+  max-height: 26rem;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+
+  /* Floating effect: produk tampak melayang di atas navy */
+  filter: drop-shadow(0 1.5rem 3rem rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0.4rem 1rem rgba(10, 17, 40, 0.4));
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ---------- Pagination ---------- */
+.showcase-swiper .swiper-pagination {
+  bottom: 0.5rem;
+}
+
+.showcase-swiper .swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: rgba(255, 255, 255, 0.35);
+  opacity: 1;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.showcase-swiper .swiper-pagination-bullet-active {
+  background: #ffffff;
+  transform: scale(1.25);
+}
+
+/* ---------- Navigation ---------- */
+.showcase-nav {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.showcase-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.showcase-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: scale(1.05);
+}
+
+/* ---------- Kolom Kanan: Editorial ---------- */
+.showcase-editorial {
+  text-align: left;
+}
+
+.showcase-editorial .section-eyebrow {
+  margin-bottom: 0.75rem;
+}
+
+.showcase-editorial .section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.showcase-editorial-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 2.5vw, 1.1875rem);
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.25rem;
+}
+
+/* ---------- Highlight Poin ---------- */
+.showcase-highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.showcase-highlight-group {
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+}
+
+.showcase-highlight-title {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.875rem;
+}
+
+.showcase-highlight-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.showcase-highlight-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.625rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.showcase-highlight-item span {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================
+   Section 4: Lokasi Workshop (2-Column Layout)
    ============================================ */
 .location {
   padding: 6rem 1.5rem 7rem;
@@ -705,6 +876,22 @@ body {
     margin-bottom: 2.5rem;
   }
 
+  .showcase {
+    padding: 4.5rem 1.25rem 5rem;
+  }
+
+  .showcase-layout {
+    gap: 1.75rem;
+  }
+
+  .showcase-img {
+    max-height: 18rem;
+  }
+
+  .showcase-highlights {
+    gap: 1rem;
+  }
+
   .location {
     padding: 4.5rem 1.25rem 5rem;
   }
@@ -734,6 +921,16 @@ body {
   .about-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+
+  .showcase-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .showcase-highlights {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .location-layout {

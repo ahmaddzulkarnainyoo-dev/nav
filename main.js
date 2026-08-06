@@ -20,6 +20,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  /* ---------- Product Showcase Swiper ---------- */
+  var swiperEl = document.querySelector(".showcase-swiper");
+
+  if (swiperEl && window.Swiper) {
+    var showcaseSwiper = new Swiper(swiperEl, {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      centeredSlides: true,
+      loop: true,
+      speed: 700,
+      autoplay: {
+        delay: 2800,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      grabCursor: true,
+      touchEventsTarget: "container",
+      // Touch/drag gesit tanpa patah-patah
+      resistance: true,
+      resistanceRatio: 0.65,
+      pagination: {
+        el: swiperEl.querySelector(".swiper-pagination"),
+        clickable: true,
+      },
+      navigation: {
+        nextEl: swiperEl.querySelector(".showcase-next"),
+        prevEl: swiperEl.querySelector(".showcase-prev"),
+      },
+    });
+  }
+
   /* ---------- GSAP Animations ---------- */
   if (window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
@@ -146,6 +177,84 @@ document.addEventListener("DOMContentLoaded", function () {
         ease: "power2.out",
         scrollTrigger: {
           trigger: ".about-grid",
+          start: "top 80%",
+        },
+      }
+    );
+
+    /* --- Scroll Narrative: Product Showcase --- */
+    gsap.fromTo(
+      ".showcase-editorial .section-eyebrow",
+      { y: 24, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".showcase",
+          start: "top 80%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".showcase-editorial .section-heading",
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".showcase",
+          start: "top 75%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".showcase-editorial-text",
+      { y: 32, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".showcase",
+          start: "top 70%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".showcase-highlight-group",
+      { y: 32, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".showcase-highlights",
+          start: "top 85%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".showcase-swiper",
+      { y: 48, opacity: 0, scale: 0.98 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1.0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".showcase-layout",
           start: "top 80%",
         },
       }

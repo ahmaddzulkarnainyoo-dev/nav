@@ -20,6 +20,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
+  <!-- Swiper.js CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -231,7 +237,170 @@
     </div>
   </section>
 
-  <!-- ============ Section 3: Lokasi Workshop ============ -->
+  <!-- ============ Section 3: Product Showcase Slider ============ -->
+  <section class="showcase relative w-full" id="koleksi">
+    <div class="showcase-inner">
+      <div class="showcase-layout">
+        <!-- Kolom Kiri: Interactive Auto-Slide / Touch Swiper -->
+        <div class="showcase-slider-col">
+          <div class="showcase-swiper swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="assets/samples/sample-1.png"
+                  alt="Produk Apparel Premium NAV"
+                  loading="lazy"
+                  class="showcase-img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="assets/samples/sample-2.png"
+                  alt="Produk Apparel Premium NAV"
+                  loading="lazy"
+                  class="showcase-img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="assets/samples/sample-3.png"
+                  alt="Produk Apparel Premium NAV"
+                  loading="lazy"
+                  class="showcase-img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="assets/samples/sample-4.png"
+                  alt="Produk Apparel Premium NAV"
+                  loading="lazy"
+                  class="showcase-img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="assets/samples/sample-5.png"
+                  alt="Produk Apparel Premium NAV"
+                  loading="lazy"
+                  class="showcase-img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="assets/samples/sample-6.png"
+                  alt="Produk Souvenir Premium NAV"
+                  loading="lazy"
+                  class="showcase-img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="assets/samples/sample-7.png"
+                  alt="Produk Souvenir Premium NAV"
+                  loading="lazy"
+                  class="showcase-img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="assets/samples/sample-8.png"
+                  alt="Produk Souvenir Premium NAV"
+                  loading="lazy"
+                  class="showcase-img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="assets/samples/sample-9.png"
+                  alt="Produk Souvenir Premium NAV"
+                  loading="lazy"
+                  class="showcase-img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="assets/samples/sample-10.png"
+                  alt="Produk Souvenir Premium NAV"
+                  loading="lazy"
+                  class="showcase-img"
+                />
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Navigation Arrows -->
+            <div class="showcase-nav">
+              <button class="showcase-nav-btn showcase-prev" aria-label="Sebelumnya">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button class="showcase-nav-btn showcase-next" aria-label="Berikutnya">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Deskripsi Editorial -->
+        <div class="showcase-editorial">
+          <p class="section-eyebrow">CRAFTING EXCELLENCE & PREMIUM MATERIALS</p>
+          <h2 class="section-heading">Standardisasi Kualitas Tanpa Kompromi</h2>
+          <p class="showcase-editorial-text">
+            Setiap helai busana dan item souvenir dirancang untuk mencerminkan
+            identitas terbaik Anda. Menggabungkan pemilihan material pilihan
+            berdaya tahan tinggi, teknik pengerjaan presisi, serta kontrol
+            kualitas ketat di setiap detailnya—mulai dari tekstur kain premium
+            hingga finishing merchandise eksklusif.
+          </p>
+
+          <!-- Highlight Poin -->
+          <div class="showcase-highlights">
+            <div class="showcase-highlight-group">
+              <h4 class="showcase-highlight-title">Apparel</h4>
+              <ul class="showcase-highlight-list">
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  High-Density Fabric
+                </li>
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  Precision Stitching
+                </li>
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  Elegant Fit
+                </li>
+              </ul>
+            </div>
+
+            <div class="showcase-highlight-group">
+              <h4 class="showcase-highlight-title">Souvenir</h4>
+              <ul class="showcase-highlight-list">
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  Durable Build
+                </li>
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  Custom Laser & Print
+                </li>
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  Refined Polish
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Section 4: Lokasi Workshop ============ -->
   <section class="location relative w-full" id="lokasi">
     <div class="location-inner">
       <div class="location-layout">
@@ -302,7 +471,7 @@
     </div>
   </section>
 
-  <!-- ============ Section 4: Contact ============ -->
+  <!-- ============ Section 5: Contact ============ -->
   <section class="contact relative w-full" id="kontak">
     <div class="contact-inner">
       <div class="contact-grid">
@@ -396,6 +565,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Swiper.js JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- Video Play Fallback -->
   <script src="main.js"></script>
