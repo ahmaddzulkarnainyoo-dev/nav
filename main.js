@@ -4,9 +4,9 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   /* ---------- Video Play Fallback ---------- */
-  var video = document.getElementById("hero-video");
+  var videos = document.querySelectorAll("video");
 
-  if (video) {
+  videos.forEach(function (video) {
     var playPromise = video.play();
 
     if (playPromise !== undefined) {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
     }
-  }
+  });
 
   /* ---------- GSAP Animations ---------- */
   if (window.gsap && window.ScrollTrigger) {
@@ -29,14 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
       defaults: { ease: "power3.out" },
     });
 
-    // Fade-in halus overlay & video (1.2s)
+    // Fade-in halus background video persisten
     tl.fromTo(
-      ".hero-overlay",
+      ".bg-fixed-video",
       { opacity: 0 },
       { opacity: 1, duration: 1.2, ease: "power2.out" },
       0
     ).fromTo(
-      ".hero-video",
+      ".bg-fixed-overlay",
       { opacity: 0 },
       { opacity: 1, duration: 1.2, ease: "power2.out" },
       0
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       0.55
     );
 
-    // Empat tombol muncul berurutan dari bawah ke atas (stagger 0.15s)
+    // Empat tombol muncul berurutan (stagger 0.15s)
     tl.fromTo(
       ".hero-btn",
       { y: 40, opacity: 0 },
@@ -72,6 +72,21 @@ document.addEventListener("DOMContentLoaded", function () {
       { opacity: 0 },
       { opacity: 1, duration: 0.8 },
       1.4
+    );
+
+    /* --- Marquee Ticker: fade-in tipis --- */
+    gsap.fromTo(
+      ".marquee",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".marquee",
+          start: "top 95%",
+        },
+      }
     );
 
     /* --- Scroll Narrative: About Us --- */
@@ -131,6 +146,100 @@ document.addEventListener("DOMContentLoaded", function () {
         ease: "power2.out",
         scrollTrigger: {
           trigger: ".about-grid",
+          start: "top 80%",
+        },
+      }
+    );
+
+    /* --- Scroll Narrative: Lokasi Workshop --- */
+    gsap.fromTo(
+      ".location-editorial .section-eyebrow",
+      { y: 24, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".location",
+          start: "top 80%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".location-editorial .section-heading",
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".location",
+          start: "top 75%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".location-editorial-text",
+      { y: 32, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".location",
+          start: "top 70%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".location-editorial-link",
+      { y: 24, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".location",
+          start: "top 65%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".location-card",
+      { y: 48, opacity: 0, scale: 0.98 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1.0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".location-layout",
+          start: "top 80%",
+        },
+      }
+    );
+
+    /* --- Scroll Narrative: Contact --- */
+    gsap.fromTo(
+      ".contact-card",
+      { y: 48, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        stagger: 0.18,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".contact-grid",
           start: "top 80%",
         },
       }
