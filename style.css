@@ -404,10 +404,23 @@ body {
   min-width: 0;
 }
 
+/* Etalase kaca: frame glassmorphism di belakang produk */
+.showcase-frame {
+  position: relative;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+}
+
 .showcase-swiper {
   position: relative;
   width: 100%;
-  padding-bottom: 3.5rem;
+  /* Ruang untuk pagination di bawah frame */
+  margin-bottom: 2.75rem;
 }
 
 .showcase-swiper .swiper-slide {
@@ -416,27 +429,26 @@ body {
   justify-content: center;
 }
 
+/* Floating drop shadow: objek terpisah sempurna dari latar */
 .showcase-img {
   display: block;
-  max-width: 88%;
-  max-height: 26rem;
+  max-width: 92%;
+  max-height: 24rem;
   width: auto;
   height: auto;
   object-fit: contain;
 
-  /* Floating effect: produk tampak melayang di atas navy */
-  filter: drop-shadow(0 1.5rem 3rem rgba(0, 0, 0, 0.55))
-    drop-shadow(0 0.4rem 1rem rgba(10, 17, 40, 0.4));
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6));
   user-select: none;
   -webkit-user-drag: none;
 }
 
-/* ---------- Pagination ---------- */
-.showcase-swiper .swiper-pagination {
-  bottom: 0.5rem;
+/* ---------- Pagination (di bawah frame) ---------- */
+.swiper-pagination {
+  bottom: -2.25rem !important;
 }
 
-.showcase-swiper .swiper-pagination-bullet {
+.swiper-pagination-bullet {
   width: 0.5rem;
   height: 0.5rem;
   background: rgba(255, 255, 255, 0.35);
@@ -444,23 +456,18 @@ body {
   transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.showcase-swiper .swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
   background: #ffffff;
   transform: scale(1.25);
 }
 
-/* ---------- Navigation ---------- */
-.showcase-nav {
+/* ---------- Navigation Arrows (sisi kiri & kanan frame) ---------- */
+.showcase-prev,
+.showcase-next {
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.75rem;
-  z-index: 10;
-}
-
-.showcase-nav-btn {
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -474,10 +481,19 @@ body {
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
-.showcase-nav-btn:hover {
+.showcase-prev {
+  left: -1.25rem;
+}
+
+.showcase-next {
+  right: -1.25rem;
+}
+
+.showcase-prev:hover,
+.showcase-next:hover {
   background: rgba(255, 255, 255, 0.16);
   border-color: rgba(255, 255, 255, 0.45);
-  transform: scale(1.05);
+  transform: translateY(-50%) scale(1.05);
 }
 
 /* ---------- Kolom Kanan: Editorial ---------- */
@@ -714,6 +730,99 @@ body {
   font-size: 1.125rem;
 }
 
+/* ---------- Cabang Jakarta (Branch Info) ---------- */
+.location-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-top: 3rem;
+  padding: 1.75rem 1.75rem;
+  text-align: left;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1rem;
+
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.location-branch:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-4px);
+}
+
+.location-branch-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.location-branch-content {
+  flex: 1;
+}
+
+.location-branch-title {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.location-branch-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 42rem;
+}
+
+.location-branch-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  flex-shrink: 0;
+
+  padding: 0.6875rem 1.375rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 0.5rem;
+
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.location-branch-link:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: scale(1.025);
+}
+
+.location-branch-link span {
+  font-size: 1.0625rem;
+}
+
 /* ============================================
    Section 4: Contact (Dual Contact Cards)
    ============================================ */
@@ -884,6 +993,10 @@ body {
     gap: 1.75rem;
   }
 
+  .showcase-frame {
+    padding: 0.75rem;
+  }
+
   .showcase-img {
     max-height: 18rem;
   }
@@ -892,12 +1005,24 @@ body {
     gap: 1rem;
   }
 
+  .showcase-prev {
+    left: -0.5rem;
+  }
+
+  .showcase-next {
+    right: -0.5rem;
+  }
+
   .location {
     padding: 4.5rem 1.25rem 5rem;
   }
 
   .location-layout {
     gap: 1.75rem;
+  }
+
+  .location-branch {
+    padding: 1.5rem;
   }
 
   .contact {
@@ -941,6 +1066,11 @@ body {
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.75rem;
+  }
+
+  .location-branch {
+    flex-direction: row;
+    align-items: center;
   }
 }
 

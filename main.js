@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ---------- Product Showcase Swiper ---------- */
   var swiperEl = document.querySelector(".showcase-swiper");
+  var showcaseFrame = document.querySelector(".showcase-frame");
 
   if (swiperEl && window.Swiper) {
     var showcaseSwiper = new Swiper(swiperEl, {
@@ -45,8 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
         clickable: true,
       },
       navigation: {
-        nextEl: swiperEl.querySelector(".showcase-next"),
-        prevEl: swiperEl.querySelector(".showcase-prev"),
+        // Tombol berada di dalam frame, di luar container swiper
+        nextEl: showcaseFrame ? showcaseFrame.querySelector(".showcase-next") : null,
+        prevEl: showcaseFrame ? showcaseFrame.querySelector(".showcase-prev") : null,
       },
     });
   }
@@ -333,6 +335,21 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".location-layout",
           start: "top 80%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".location-branch",
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".location-branch",
+          start: "top 85%",
         },
       }
     );
