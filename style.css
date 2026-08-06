@@ -1,5 +1,5 @@
 /* ============================================
-   NAV OFFICIAL — Landing Page Foundation
+   NAV OFFICIAL — Landing Page
    Fonts: Syne (Heading) & Plus Jakarta Sans (Body)
    ============================================ */
 
@@ -21,14 +21,30 @@ body {
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* ---------- Hero Section ---------- */
+/* ============================================
+   Section 1: Hero
+   ============================================ */
 .hero {
   position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+/* ---------- CSS Fallback Background ----------
+   Muncul seamless jika video terlambat dimuat,
+   terutama di jaringan seluler. */
+.hero-fallback {
+  background-color: #0a1128;
+  background-image: radial-gradient(
+    circle at 50% 40%,
+    rgba(30, 45, 90, 0.55) 0%,
+    rgba(10, 17, 40, 0.9) 60%,
+    #0a1128 100%
+  );
 }
 
 /* ---------- Background Video ---------- */
@@ -48,7 +64,6 @@ body {
   position: absolute;
   inset: 0;
   background-color: rgba(10, 17, 40, 0.65);
-  /* Gradasi halus untuk kedalaman premium */
   background-image: linear-gradient(
     to bottom,
     rgba(10, 17, 40, 0.55) 0%,
@@ -62,7 +77,7 @@ body {
   font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: clamp(2.5rem, 8vw, 6rem);
-  letter-spacing: -0.02em; /* tracking-tight: rapat & proporsional */
+  letter-spacing: -0.02em;
   line-height: 1.05;
   color: #ffffff;
   text-transform: uppercase;
@@ -72,10 +87,43 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 500;
   font-size: clamp(0.875rem, 2.5vw, 1.25rem);
-  letter-spacing: 0.35em; /* tracking-widest */
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
   margin-top: 1.25rem;
+}
+
+/* ---------- Scroll Indicator ---------- */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-scroll-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.625rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-scroll-line {
+  display: block;
+  width: 1px;
+  height: 3rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 /* ---------- Action Buttons (Glassmorphism) ---------- */
@@ -103,7 +151,6 @@ body {
   text-align: center;
   color: #ffffff;
 
-  /* Glassmorphism Effect */
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -123,7 +170,94 @@ body {
   transform: scale(0.985);
 }
 
-/* ---------- Responsive ---------- */
+/* ============================================
+   Section 2: About Us
+   ============================================ */
+.about {
+  background-color: #0a1128;
+  padding: 6rem 1.5rem;
+}
+
+.about-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.25rem;
+}
+
+.about-heading {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 5vw, 3.25rem);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.about-description {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 48rem;
+  margin: 0 auto 3.5rem;
+}
+
+/* ---------- Grid Keunggulan ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 2rem 1.5rem;
+  text-align: left;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+.about-card-title {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.about-card-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
 @media (max-width: 640px) {
   .hero-subheading {
     letter-spacing: 0.25em;
@@ -137,5 +271,20 @@ body {
   .hero-btn {
     width: min(100%, 18rem);
     padding: 0.8125rem 1.5rem;
+  }
+
+  .about {
+    padding: 4.5rem 1.25rem;
+  }
+
+  .about-description {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
 }

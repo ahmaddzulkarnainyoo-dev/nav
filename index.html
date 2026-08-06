@@ -24,8 +24,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Hero Section -->
+  <!-- ============ Section 1: Hero ============ -->
   <section class="hero relative h-screen w-screen overflow-hidden">
+    <!-- CSS Fallback Background (Dark Navy) -->
+    <div class="hero-fallback absolute inset-0"></div>
+
     <!-- Background Video -->
     <video
       id="hero-video"
@@ -34,6 +37,7 @@
       loop
       muted
       playsinline
+      poster=""
     >
       <source src="assets/bg-video.mp4" type="video/mp4" />
     </video>
@@ -83,6 +87,51 @@
           >
             Lokasi Workshop (Maps)
           </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-indicator">
+      <span class="hero-scroll-text">SCROLL</span>
+      <span class="hero-scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ============ Section 2: About Us ============ -->
+  <section class="about relative w-full">
+    <div class="about-inner">
+      <p class="about-eyebrow">Tentang Kami</p>
+      <h2 class="about-heading">KERAJINAN TEKSTIL & PRESISI PRODUKSI</h2>
+      <p class="about-description">
+        NAV OFFICIAL berdedikasi menghadirkan solusi kustomisasi konveksi dan
+        souvenir kelas premium. Menggabungkan pemilihan material terbaik,
+        ketelitian pola, dan standar pengerjaan tinggi untuk menerjemahkan
+        identitas brand serta komunitas Anda ke dalam wujud nyata.
+      </p>
+
+      <!-- 3 Poin Keunggulan -->
+      <div class="about-grid">
+        <div class="about-card">
+          <h3 class="about-card-title">Material Grade A</h3>
+          <p class="about-card-text">
+            Bahan pilihan dengan kualitas terbaik untuk hasil yang tahan lama
+            dan nyaman dikenakan.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3 class="about-card-title">Jahitan Presisi High-Density</h3>
+          <p class="about-card-text">
+            Teknik jahit rapat dan presisi untuk detail yang rapi serta kokoh
+            di setiap produk.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3 class="about-card-title">Kapasitas Produksi Kustom</h3>
+          <p class="about-card-text">
+            Fleksibel melayani kebutuhan personal hingga skala komunitas dan
+            brand dengan volume besar.
+          </p>
         </div>
       </div>
     </div>

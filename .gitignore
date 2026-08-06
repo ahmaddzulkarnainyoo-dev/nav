@@ -32,4 +32,7 @@ Thumbs.db
 
 # Cache
 .cache/
-.turbo/".history/"  
+.turbo/
+
+# Local History (VS Code extension)
+.history/

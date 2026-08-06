@@ -14,16 +14,17 @@ document.addEventListener("DOMContentLoaded", function () {
         // Autoplay diblokir, paksa sekali lagi dengan muted
         video.muted = true;
         video.play().catch(function () {
-          // Tetap gagal, abaikan: overlay navy tetap elegan
+          // Tetap gagal, abaikan: fallback navy tetap elegan
         });
       });
     }
   }
 
-  /* ---------- GSAP Entrance Animation ---------- */
+  /* ---------- GSAP Animations ---------- */
   if (window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
 
+    /* --- Entrance Hero --- */
     var tl = gsap.timeline({
       defaults: { ease: "power3.out" },
     });
@@ -63,6 +64,76 @@ document.addEventListener("DOMContentLoaded", function () {
       { y: 40, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.7, stagger: 0.15 },
       0.75
+    );
+
+    // Scroll indicator muncul setelah tombol
+    tl.fromTo(
+      ".hero-scroll-indicator",
+      { opacity: 0 },
+      { opacity: 1, duration: 0.8 },
+      1.4
+    );
+
+    /* --- Scroll Narrative: About Us --- */
+    gsap.fromTo(
+      ".about-eyebrow",
+      { y: 24, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".about",
+          start: "top 80%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".about-heading",
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".about",
+          start: "top 75%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".about-description",
+      { y: 32, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".about",
+          start: "top 70%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".about-card",
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".about-grid",
+          start: "top 80%",
+        },
+      }
     );
 
     /* ---------- Hover Parallax Tipis pada Tombol ---------- */
