@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAV OFFICIAL | Pusat Konveksi & Souvenir Premium</title>
+
+  <!-- Google Fonts: Syne (Heading) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero relative h-screen w-screen overflow-hidden">
+    <!-- Background Video -->
+    <video
+      id="hero-video"
+      class="hero-video absolute inset-0 w-full h-full object-cover"
+      autoplay
+      loop
+      muted
+      playsinline
+    >
+      <source src="assets/bg-video.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Dark Navy Overlay -->
+    <div class="hero-overlay absolute inset-0"></div>
+
+    <!-- Typographic Statement -->
+    <div
+      class="relative z-10 flex h-full w-full items-center justify-center overflow-y-auto px-6 py-16 text-center"
+    >
+      <div>
+        <h1 class="hero-heading">NAV OFFICIAL</h1>
+        <p class="hero-subheading">Pusat Konveksi & Souvenir Premium</p>
+
+        <!-- Action Buttons -->
+        <div class="hero-actions">
+          <a
+            href="https://wa.me/6285284208335"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            Hubungi Admin WA
+          </a>
+          <a
+            href="https://www.instagram.com/nafkonveksi?igsh=MW91eXB5MDRraWRtMQ%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            NAF Konveksi (Instagram)
+          </a>
+          <a
+            href="https://www.instagram.com/naf.souvenirpku?igsh=MzdwZGdudXVhc2Ey&utm_source=qr"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            NAF Souvenir (Instagram)
+          </a>
+          <a
+            href="https://maps.app.goo.gl/zq5YEAA7Su2UsVHp7?g_st=ic"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            Lokasi Workshop (Maps)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Play Fallback -->
+  <script src="main.js"></script>
+</body>
+</html>
