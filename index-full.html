@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAF OFFICIAL | Pusat Konveksi Seragam</title>
+
+  <!-- Google Fonts: Syne (Heading) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Swiper.js CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ============ Persistent Video Background (Full-Page, Fixed) ============ -->
+  <div class="bg-fixed" aria-hidden="true">
+    <!-- CSS Fallback Background (Dark Navy) -->
+    <div class="bg-fixed-fallback"></div>
+
+    <!-- Background Video -->
+    <video
+      id="bg-video"
+      class="bg-fixed-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      poster=""
+    >
+      <source src="assets/bg-video.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Full-Height Navy Gradient Overlay -->
+    <div class="bg-fixed-overlay"></div>
+  </div>
+
+  <!-- ============ Section 1: Hero ============ -->
+  <section class="hero relative h-screen w-screen overflow-hidden">
+    <!-- Subtle Vignette Fallback -->
+    <div class="hero-fallback absolute inset-0"></div>
+
+    <!-- Light Overlay untuk kontras teks -->
+    <div class="hero-overlay absolute inset-0"></div>
+
+    <!-- Typographic Statement -->
+    <div
+      class="relative z-10 flex h-full w-full items-center justify-center overflow-y-auto px-6 py-16 text-center"
+    >
+      <div>
+        <h1 class="hero-heading">NAF OFFICIAL</h1>
+        <p class="hero-subheading">Pusat Konveksi Seragam</p>
+
+        <!-- Action Buttons (Official Icons) -->
+        <div class="hero-actions">
+          <a
+            href="https://wa.me/628136702162"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            <svg
+              class="hero-btn-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+            <span class="hero-btn-text">
+              <span class="hero-btn-label">hubungi</span>
+              <span class="hero-btn-value">ADMIN PEKANBARU</span>
+            </span>
+          </a>
+
+          <a
+            href="https://wa.me/6285284208335"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            <svg
+              class="hero-btn-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+            <span class="hero-btn-text">
+              <span class="hero-btn-label">HUBUNGI</span>
+              <span class="hero-btn-value">ADMIN JAKARTA</span>
+            </span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/nafkonveksi?igsh=MW91eXB5MDRraWRtMQ%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            <svg
+              class="hero-btn-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              />
+            </svg>
+            <span class="hero-btn-text">
+              <span class="hero-btn-label">NAF Konveksi</span>
+              <span class="hero-btn-value">@nafkonveksi</span>
+            </span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/naf.sportpku?igsh=N2F4N2Zuem9pdHln"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            <svg
+              class="hero-btn-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              />
+            </svg>
+            <span class="hero-btn-text">
+              <span class="hero-btn-label">NAF Sport</span>
+              <span class="hero-btn-value">@naf.sportpku</span>
+            </span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/naf.jaket?igsh=MWI3MWx4dnBjOTZ5OA=="
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            <svg
+              class="hero-btn-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              />
+            </svg>
+            <span class="hero-btn-text">
+              <span class="hero-btn-label">NAF Jaket</span>
+              <span class="hero-btn-value">@naf.jaket</span>
+            </span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/naf.souvenirpku?igsh=MzdwZGdudXVhc2Ey&utm_source=qr"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            <svg
+              class="hero-btn-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              />
+            </svg>
+            <span class="hero-btn-text">
+              <span class="hero-btn-label">NAF Souvenir</span>
+              <span class="hero-btn-value">@naf.souvenirpku</span>
+            </span>
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@naf.konveksi?_r=1&_t=ZS-98gkWaGL4g0"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            <svg
+              class="hero-btn-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+              />
+            </svg>
+            <span class="hero-btn-text">
+              <span class="hero-btn-label">NAF TIKTOK</span>
+              <span class="hero-btn-value">@naf.konveksi</span>
+            </span>
+          </a>
+
+          <a
+            href="https://maps.app.goo.gl/zsVedD3SzHDok4Jk9"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            <svg
+              class="hero-btn-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 21s-7-5.6-7-11a7 7 0 1 1 14 0c0 5.4-7 11-7 11z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+            <span class="hero-btn-text">
+              <span class="hero-btn-label">LOKASI WORKSHOP</span>
+              <span class="hero-btn-value">Lokasi Pekanbaru</span>
+            </span>
+          </a>
+
+          <a
+            href="https://maps.app.goo.gl/Dayp3wGxU7aaeLos7?g_st=ac"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn"
+          >
+            <svg
+              class="hero-btn-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 21s-7-5.6-7-11a7 7 0 1 1 14 0c0 5.4-7 11-7 11z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+            <span class="hero-btn-text">
+              <span class="hero-btn-label">LOKASI WORKSHOP</span>
+              <span class="hero-btn-value">Lokasi Jakarta</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-indicator">
+      <span class="hero-scroll-text">SCROLL</span>
+      <span class="hero-scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ============ Infinite Marquee Ticker ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span>PREMIUM FABRIC SELECTION</span>
+        <span class="marquee-sep">&bull;</span>
+        <span>HIGH-DENSITY STITCHING</span>
+        <span class="marquee-sep">&bull;</span>
+        <span>FAST & PRECISION PRODUCTION</span>
+        <span class="marquee-sep">&bull;</span>
+        <span>PEKANBARU HEADQUARTERS</span>
+        <span class="marquee-sep">&bull;</span>
+        <span>NATIONWIDE SHIPPING</span>
+        <span class="marquee-sep">&bull;</span>
+      </div>
+      <div class="marquee-group">
+        <span>PREMIUM FABRIC SELECTION</span>
+        <span class="marquee-sep">&bull;</span>
+        <span>HIGH-DENSITY STITCHING</span>
+        <span class="marquee-sep">&bull;</span>
+        <span>FAST & PRECISION PRODUCTION</span>
+        <span class="marquee-sep">&bull;</span>
+        <span>PEKANBARU HEADQUARTERS</span>
+        <span class="marquee-sep">&bull;</span>
+        <span>NATIONWIDE SHIPPING</span>
+        <span class="marquee-sep">&bull;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Section 2: About Us ============ -->
+  <section class="about relative w-full">
+    <div class="about-inner">
+      <p class="about-eyebrow">Tentang Kami</p>
+      <h2 class="about-heading">KERAJINAN TEKSTIL & PRESISI PRODUKSI</h2>
+      <p class="about-description">
+        NAF OFFICIAL berdedikasi menghadirkan solusi kustomisasi konveksi dan
+        souvenir kelas premium. Menggabungkan pemilihan material terbaik,
+        ketelitian pola, dan standar pengerjaan tinggi untuk menerjemahkan
+        identitas brand serta komunitas Anda ke dalam wujud nyata.
+      </p>
+
+      <!-- 3 Poin Keunggulan -->
+      <div class="about-grid">
+        <div class="about-card">
+          <h3 class="about-card-title">Material Grade A</h3>
+          <p class="about-card-text">
+            Bahan pilihan dengan kualitas terbaik untuk hasil yang tahan lama
+            dan nyaman dikenakan.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3 class="about-card-title">Jahitan Presisi High-Density</h3>
+          <p class="about-card-text">
+            Teknik jahit rapat dan presisi untuk detail yang rapi serta kokoh
+            di setiap produk.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3 class="about-card-title">Kapasitas Produksi Kustom</h3>
+          <p class="about-card-text">
+            Fleksibel melayani kebutuhan personal hingga skala komunitas dan
+            brand dengan volume besar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Section 3: Product Showcase Slider ============ -->
+  <section class="showcase relative w-full" id="koleksi">
+    <div class="showcase-inner">
+      <div class="showcase-layout">
+        <!-- Kolom Kiri: Interactive Auto-Slide / Touch Swiper -->
+        <div class="showcase-slider-col">
+          <div class="showcase-frame">
+            <div class="showcase-swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="assets/samples/sample-1.png"
+                    alt="Produk Apparel Premium NAV"
+                    loading="lazy"
+                    class="showcase-img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/samples/sample-2.png"
+                    alt="Produk Apparel Premium NAV"
+                    loading="lazy"
+                    class="showcase-img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/samples/sample-3.png"
+                    alt="Produk Apparel Premium NAV"
+                    loading="lazy"
+                    class="showcase-img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/samples/sample-4.png"
+                    alt="Produk Apparel Premium NAV"
+                    loading="lazy"
+                    class="showcase-img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/samples/sample-5.png"
+                    alt="Produk Apparel Premium NAV"
+                    loading="lazy"
+                    class="showcase-img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/samples/sample-6.png"
+                    alt="Produk Souvenir Premium NAV"
+                    loading="lazy"
+                    class="showcase-img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/samples/sample-7.png"
+                    alt="Produk Souvenir Premium NAV"
+                    loading="lazy"
+                    class="showcase-img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/samples/sample-8.png"
+                    alt="Produk Souvenir Premium NAV"
+                    loading="lazy"
+                    class="showcase-img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/samples/sample-9.png"
+                    alt="Produk Souvenir Premium NAV"
+                    loading="lazy"
+                    class="showcase-img"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/samples/sample-10.png"
+                    alt="Produk Souvenir Premium NAV"
+                    loading="lazy"
+                    class="showcase-img"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation Arrows (sisi kiri & kanan frame) -->
+            <button class="showcase-nav-btn showcase-prev" aria-label="Sebelumnya">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <button class="showcase-nav-btn showcase-next" aria-label="Berikutnya">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" />
+              </svg>
+            </button>
+
+            <!-- Pagination (di bawah frame) -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Deskripsi Editorial -->
+        <div class="showcase-editorial">
+          <p class="section-eyebrow">CRAFTING EXCELLENCE & PREMIUM MATERIALS</p>
+          <h2 class="section-heading">Standardisasi Kualitas Tanpa Kompromi</h2>
+          <p class="showcase-editorial-text">
+            Setiap helai busana dan item souvenir dirancang untuk mencerminkan
+            identitas terbaik Anda. Menggabungkan pemilihan material pilihan
+            berdaya tahan tinggi, teknik pengerjaan presisi, serta kontrol
+            kualitas ketat di setiap detailnya—mulai dari tekstur kain premium
+            hingga finishing merchandise eksklusif.
+          </p>
+
+          <!-- Highlight Poin -->
+          <div class="showcase-highlights">
+            <div class="showcase-highlight-group">
+              <h4 class="showcase-highlight-title">Apparel</h4>
+              <ul class="showcase-highlight-list">
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  High-Density Fabric
+                </li>
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  Precision Stitching
+                </li>
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  Elegant Fit
+                </li>
+              </ul>
+            </div>
+
+            <div class="showcase-highlight-group">
+              <h4 class="showcase-highlight-title">Souvenir</h4>
+              <ul class="showcase-highlight-list">
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  Durable Build
+                </li>
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  Custom Laser & Print
+                </li>
+                <li class="showcase-highlight-item">
+                  <span aria-hidden="true">&mdash;</span>
+                  Refined Polish
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Section 4: Lokasi Workshop ============ -->
+  <section class="location relative w-full" id="lokasi">
+    <div class="location-inner">
+      <div class="location-layout">
+        <!-- Kolom Kiri: Kartu Video Google Earth Pekanbaru -->
+        <a
+          href="https://maps.app.goo.gl/zsVedD3SzHDok4Jk9"
+          target="_blank"
+          rel="noopener"
+          class="location-card"
+        >
+          <div class="location-card-media">
+            <video
+              class="location-card-video"
+              autoplay
+              loop
+              muted
+              playsinline
+              poster=""
+            >
+              <source src="assets/location-earth.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="location-card-body">
+            <span class="location-card-pin">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                width="20"
+                height="20"
+                aria-hidden="true"
+              >
+                <path d="M12 21s-7-5.6-7-11a7 7 0 1 1 14 0c0 5.4-7 11-7 11z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+            </span>
+            <div>
+              <h3 class="location-card-title">Lokasi Pekanbaru</h3>
+              <p class="location-card-subtitle">Primary Headquarters</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Kolom Kanan: Teks Editorial -->
+        <div class="location-editorial">
+          <p class="section-eyebrow">Workshop Network</p>
+          <h2 class="section-heading">Lokasi Workshop</h2>
+          <p class="location-editorial-text">
+            Pusat Manufaktur & Presisi Produksi — Mengoperasikan fasilitas
+            produksi utama di Pekanbaru dengan standar jahitan tinggi, kontrol
+            kualitas ketat, dan kapasitas kustomisasi besar untuk melayani
+            kebutuhan seluruh Indonesia.
+          </p>
+          <a
+            href="https://maps.app.goo.gl/zsVedD3SzHDok4Jk9"
+            target="_blank"
+            rel="noopener"
+            class="location-editorial-link"
+          >
+            Buka di Google Maps
+            <span aria-hidden="true">&#8599;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Cabang Jakarta (Branch Info) -->
+      <div class="location-branch">
+        <div class="location-branch-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            width="22"
+            height="22"
+            aria-hidden="true"
+          >
+            <path d="M12 21s-7-5.6-7-11a7 7 0 1 1 14 0c0 5.4-7 11-7 11z" />
+            <circle cx="12" cy="10" r="2.5" />
+          </svg>
+        </div>
+        <div class="location-branch-content">
+          <h3 class="location-branch-title">Lokasi Jakarta</h3>
+          <p class="location-branch-text">
+            Jaringan Layanan & Distribusi Jakarta — Memfasilitasi koordinasi,
+            sampel material, dan pengiriman cepat untuk klien area Jabodetabek
+            dan sekitarnya.
+          </p>
+        </div>
+        <a
+          href="https://maps.app.goo.gl/Dayp3wGxU7aaeLos7?g_st=ac"
+          target="_blank"
+          rel="noopener"
+          class="location-branch-link"
+        >
+          Buka di Google Maps
+          <span aria-hidden="true">&#8599;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Section 5: Contact ============ -->
+  <section class="contact relative w-full" id="kontak">
+    <div class="contact-inner">
+      <div class="contact-grid">
+        <!-- WhatsApp Admin -->
+        <div class="contact-card">
+          <div class="contact-card-header">
+            <svg
+              class="contact-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+            <h3 class="contact-card-title">WhatsApp Admin</h3>
+          </div>
+
+          <div class="contact-card-list">
+            <a
+              href="https://wa.me/628136702162"
+              target="_blank"
+              rel="noopener"
+              class="contact-item"
+            >
+              <div>
+                <span class="contact-item-label">Admin Pekanbaru</span>
+                <span class="contact-item-value">+62 813-6702-162</span>
+              </div>
+              <span class="contact-item-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            <a
+              href="https://wa.me/6285284208335"
+              target="_blank"
+              rel="noopener"
+              class="contact-item"
+            >
+              <div>
+                <span class="contact-item-label">Admin Jakarta</span>
+                <span class="contact-item-value">+62 852-8420-8335</span>
+              </div>
+              <span class="contact-item-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Instagram Official -->
+        <div class="contact-card">
+          <div class="contact-card-header">
+            <svg
+              class="contact-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              />
+            </svg>
+            <h3 class="contact-card-title">Instagram Official</h3>
+          </div>
+
+          <div class="contact-card-list">
+            <a
+              href="https://www.instagram.com/nafkonveksi?igsh=MW91eXB5MDRraWRtMQ%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener"
+              class="contact-item"
+            >
+              <div>
+                <span class="contact-item-label">NAF Konveksi</span>
+                <span class="contact-item-value">@nafkonveksi</span>
+              </div>
+              <span class="contact-item-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            <a
+              href="https://www.instagram.com/naf.souvenirpku?igsh=MzdwZGdudXVhc2Ey&utm_source=qr"
+              target="_blank"
+              rel="noopener"
+              class="contact-item"
+            >
+              <div>
+                <span class="contact-item-label">NAF Souvenir</span>
+                <span class="contact-item-value">@naf.souvenirpku</span>
+              </div>
+              <span class="contact-item-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Swiper.js JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Video Play Fallback -->
+  <script src="main.js"></script>
+</body>
+</html>
